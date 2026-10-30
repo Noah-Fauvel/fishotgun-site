@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fishotgun</title>
+  <meta name="description" content="Fishotgun is a solo or multiplayer fishing game where a rabbit uses a shotgun to catch fish, fill the Fishodex, upgrade gear, and trade with other players." />
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <audio id="background-music" loop preload="auto">
+    <source src="./assets/maintheme_background.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="page-pattern" aria-hidden="true"></div>
+  <div class="page-glow" aria-hidden="true">
+    <span class="hero-cloud hero-cloud--left"></span>
+    <span class="hero-cloud hero-cloud--right"></span>
+    <span class="hero-cloud hero-cloud--low"></span>
+    <span class="glow glow--leaf"></span>
+    <span class="glow glow--river"></span>
+    <span class="glow glow--bell"></span>
+  </div>
+
+  <button id="music-toggle" type="button" class="music-toggle" aria-pressed="false" aria-label="Toggle background music">
+    <span class="music-toggle__shell"></span>
+    <span class="music-toggle__panel"></span>
+    <span class="music-toggle__disc"></span>
+    <span id="music-record" class="music-toggle__record"></span>
+    <span class="music-toggle__pin"></span>
+    <span id="tonearm" class="music-toggle__arm"></span>
+    <span class="music-toggle__needle"></span>
+    <span class="music-toggle__cover"><img src="./assets/logo.png" alt="Fishotgun soundtrack cover" /></span>
+    <span class="music-toggle__label">Music</span>
+  </button>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__main">
+        <a href="#top" class="brand" aria-label="Fishotgun home">
+          <span class="brand__icon"><img src="./assets/icon.png" alt="Rabbit Hole icon" /></span>
+          <span class="brand__text">
+            <span class="brand__studio">Rabbit Hole</span>
+            <span class="brand__title">Fishotgun</span>
+          </span>
+        </a>
+
+        <div class="language-switcher" aria-label="Language selector">
+          <button id="lang-en" type="button" class="language-button" aria-pressed="true">EN</button>
+          <button id="lang-fr" type="button" class="language-button" aria-pressed="false">FR</button>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about" class="nav-link"><span data-i18n="navAbout">About</span></a>
+        <a href="#gallery" class="nav-link"><span data-i18n="navGallery">Gallery</span></a>
+        <a href="#team" class="nav-link"><span data-i18n="navTeam">Team</span></a>
+        <a href="#roadmap" class="nav-link"><span data-i18n="navRoadmap">Roadmap</span></a>
+        <button type="button" class="button button--small button--primary" disabled aria-disabled="true"><span data-i18n="download">Download</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="badge reveal"><span aria-hidden="true">&#127811;</span><span data-i18n="heroEyebrow">Rabbit Hole Presents</span></div>
+        <h1 class="hero-title reveal reveal--delay-1">Fishotgun</h1>
+        <p class="hero-text reveal reveal--delay-2" data-i18n="heroBody">Play as a fishing rabbit who turns every catch into a duel: approach a fishing spot, track the shadow of a fish, charge your aim, and fire the shotgun at the right moment.</p>
+
+        <div class="hero-actions reveal reveal--delay-3">
+          <button type="button" class="button button--primary" disabled aria-disabled="true"><span aria-hidden="true">&#127907;</span><span data-i18n="download">Download</span></button>
+          <a href="#gallery" class="button button--secondary"><span aria-hidden="true">&#128247;</span><span data-i18n="navGallery">Gallery</span></a>
+        </div>
+
+        <div class="hero-meta">
+          <p class="download-notice" data-i18n="downloadAvailable">The game is no longer available for download for now. For more information, contact me by email: <a href="mailto:noah.fauvel@epita.fr">noah.fauvel@epita.fr</a>.</p>
+          <a href="./assets/docs/guide-installation.pdf" target="_blank" rel="noopener" class="document-link"><span aria-hidden="true">&#128196;</span><span data-i18n="installGuide">Installation guide</span></a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <article class="game-card floating-card" aria-label="Fishotgun card">
+          <div class="game-card__image"><img src="./assets/icon.png" alt="Fishotgun icon" /></div>
+          <p class="game-card__title">Fishotgun</p>
+          <p class="game-card__meta" data-i18n="cardBy">By Rabbit Hole</p>
+        </article>
+        <div class="cover-frame"><img src="./assets/Cover wo logo.png" alt="Fishotgun cover art without logo" /></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container main-content">
+    <div class="content-grid">
+      <section id="about" class="panel panel--paper">
+        <div class="badge"><span aria-hidden="true">&#127807;</span><span data-i18n="aboutEyebrow">About The Game</span></div>
+        <h2 class="section-title" data-i18n="aboutTitle">A calm world, a shotgun, and fish that fight back.</h2>
+        <div class="text-stack">
+          <p data-i18n="aboutP1"><strong>Fishotgun</strong> puts you in the paws of a rabbit fisher who catches fish with a shotgun. Fishing is the core mechanic, but it plays like a combat encounter rather than a quiet minigame.</p>
+          <p data-i18n="aboutP2">When you get close enough to a fishing spot, you can enter a fight. During that fight, the fish are hidden: you only read their silhouettes and species, follow their movement, fill the gauge, then shoot to capture them.</p>
+          <p data-i18n="aboutP3">Captured fish fill the Fishodex, a book that categorizes every species you have caught. Upgrades can improve your weapon or your chance of meeting rare fish, while the shop lets you buy ammo and trade wanted fish with other players.</p>
+        </div>
+      </section>
+
+      <section class="panel panel--wood" aria-labelledby="loop-title">
+        <div class="badge badge--bell"><span aria-hidden="true">&#127907;</span><span data-i18n="loopEyebrow">Game Loop</span></div>
+        <h2 id="loop-title" class="section-title" data-i18n="loopTitle">Track, fire, fill the Fishodex.</h2>
+        <div class="loop-list">
+          <article class="loop-step"><h3 data-i18n="loopStep1Label">01 Find a spot</h3><p data-i18n="loopStep1Body">Walk across the peaceful map, get close to a fishing point, and interact with it to enter the combat phase.</p></article>
+          <article class="loop-step loop-step--leaf"><h3 data-i18n="loopStep2Label">02 Follow the fish</h3><p data-i18n="loopStep2Body">Read the silhouette, follow the fish long enough to fill the gauge, then fire when the shot is ready.</p></article>
+          <article class="loop-step loop-step--bell"><h3 data-i18n="loopStep3Label">03 Collect and trade</h3><p data-i18n="loopStep3Body">Add captured fish to the Fishodex, upgrade your odds, buy ammo, and use controlled chat to interact with other players.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <section id="studio" class="panel panel--studio">
+      <img src="./assets/logo.png" alt="Rabbit Hole team logo" class="studio-logo" />
+      <div>
+        <div class="badge badge--river"><span aria-hidden="true">&#127969;</span><span data-i18n="studioEyebrow">Studio</span></div>
+        <h2 class="section-title">Rabbit Hole</h2>
+        <p class="section-copy" data-i18n="studioBody">Rabbit Hole is a small EPITA student team building a game that mixes cute visuals, social multiplayer energy, and a slightly unhinged core idea. The name fits: every new feature sends the project one layer deeper into the tunnel.</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="panel panel--gallery">
+      <div class="section-header">
+        <div>
+          <div class="badge badge--river"><span aria-hidden="true">&#128247;</span><span data-i18n="galleryEyebrow">In-Game Preview</span></div>
+          <h2 class="section-title section-title--large" data-i18n="galleryTitle">A closer look at the world</h2>
+        </div>
+        <div class="gallery-controls">
+          <button id="carousel-prev" type="button" class="button button--secondary button--small"><span data-i18n="prev">Prev</span></button>
+          <button id="carousel-next" type="button" class="button button--primary button--small"><span data-i18n="next">Next</span></button>
+        </div>
+      </div>
+
+      <div class="carousel" aria-label="Fishotgun screenshots">
+        <div id="carousel-track" class="carousel__track">
+          <figure class="carousel__slide"><img src="./assets/carrousel3.png" alt="Fishotgun screenshot 1" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel2.png" alt="Fishotgun screenshot 2" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel.png" alt="Fishotgun screenshot 3" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carroussel4.png" alt="Fishotgun screenshot 4" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel5.png" alt="Fishotgun screenshot 5" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel6.png" alt="Fishotgun screenshot 6" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel7.png" alt="Fishotgun screenshot 7" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel8.png" alt="Fishotgun screenshot 8" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel9.png" alt="Fishotgun screenshot 9" /></figure>
+          <figure class="carousel__slide"><img src="./assets/carrousel10.png" alt="Fishotgun screenshot 10" /></figure>
+        </div>
+
+        <div class="carousel__dots">
+          <button id="carousel-dot-0" type="button" aria-label="Slide 1" class="carousel-dot is-active"></button>
+          <button id="carousel-dot-1" type="button" aria-label="Slide 2" class="carousel-dot"></button>
+          <button id="carousel-dot-2" type="button" aria-label="Slide 3" class="carousel-dot"></button>
+          <button id="carousel-dot-3" type="button" aria-label="Slide 4" class="carousel-dot"></button>
+          <button id="carousel-dot-4" type="button" aria-label="Slide 5" class="carousel-dot"></button>
+          <button id="carousel-dot-5" type="button" aria-label="Slide 6" class="carousel-dot"></button>
+          <button id="carousel-dot-6" type="button" aria-label="Slide 7" class="carousel-dot"></button>
+          <button id="carousel-dot-7" type="button" aria-label="Slide 8" class="carousel-dot"></button>
+          <button id="carousel-dot-8" type="button" aria-label="Slide 9" class="carousel-dot"></button>
+          <button id="carousel-dot-9" type="button" aria-label="Slide 10" class="carousel-dot"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="lower-grid">
+      <section id="roadmap" class="panel panel--roadmap">
+        <div class="badge badge--bell"><span aria-hidden="true">&#128506;&#65039;</span><span data-i18n="roadmapEyebrow">Roadmap</span></div>
+        <h2 class="section-title" data-i18n="roadmapTitle">Version history</h2>
+        <p class="section-copy" data-i18n="roadmapIntro">A versioned timeline highlighting the major features added at each milestone.</p>
+        <div class="timeline">
+          <article class="timeline-item"><div class="timeline-meta"><span>v0.0</span><span data-i18n="roadmapDate1">Sep-Oct 2025</span></div><h3 data-i18n="roadmap1Title">Project foundations</h3><p data-i18n="roadmap1Body">Repository setup, first menu work, engine migration to Ursina, README cleanup, and the first camera rotation prototype.</p></article>
+          <article class="timeline-item"><div class="timeline-meta"><span>v0.1</span><span data-i18n="roadmapDate2">Nov 2025-Jan 2026</span></div><h3 data-i18n="roadmap2Title">Movement, physics and networking base</h3><p data-i18n="roadmap2Body">Basic movement, third-person camera, fishing spots, server sockets, packet API, collision work, player sync, fish movement, and first spawn/move loop.</p></article>
+          <article class="timeline-item"><div class="timeline-meta"><span>v0.2</span><span data-i18n="roadmapDate3">Feb-Mar 2026</span></div><h3 data-i18n="roadmap3Title">Menus, chat and multiplayer UX</h3><p data-i18n="roadmap3Body">Main menu, server list, scrollable menus, book menu, chat, escape flow, styled UI, client-server reconciliation, and smoother player animation.</p></article>
+          <article class="timeline-item"><div class="timeline-meta"><span>v0.3</span><span data-i18n="roadmapDate4">Mar-Apr 2026</span></div><h3 data-i18n="roadmap4Title">World, water and persistence</h3><p data-i18n="roadmap4Body">Terrain scale, mountains, sky, custom fonts, water shader, pixelized water, grass texture, ambient light, logo, and server/client save systems.</p></article>
+          <article class="timeline-item"><div class="timeline-meta"><span>v0.4</span><span data-i18n="roadmapDate5">18-22 May 2026</span></div><h3 data-i18n="roadmap5Title">Fishing combat, audio and Fishodex</h3><p data-i18n="roadmap5Body">Shotgun gameplay, combat transition, pressure and HP bars, splash and gunshot sounds, game music, bird ambience, inventory, fish textures, and Fishodex foundations.</p></article>
+          <article class="timeline-item timeline-item--bell"><div class="timeline-meta"><span>v0.5</span><span data-i18n="roadmapDate6">25-27 May 2026</span></div><h3 data-i18n="roadmap6Title">Collection, shop and content sprint</h3><p data-i18n="roadmap6Body">Collected fish now feed the inventory and Fishodex, shop selling/economy systems arrived, dollars became scales, new fish and rarities were balanced, HUD/UI/menu polish landed, playlists were added, and debug/minor issues were cleaned up.</p></article>
+          <article class="timeline-item timeline-item--current"><div class="timeline-meta"><span>v0.6</span><span data-i18n="roadmapStatusCurrent">Current</span></div><h3 data-i18n="roadmap7Title">Playable progression build</h3><p data-i18n="roadmap7Body">Current build: stabilized levels, movement, shop/server behavior, chat/Fishodex layering, and packaged everything into a cleaner playable build.</p></article>
+          <article class="timeline-item timeline-item--current"><div class="timeline-meta"><span data-i18n="roadmapReportMilestone">Report</span><span>27/05/2026</span></div><h3 data-i18n="roadmapReportFinalTitle">Final soutenance</h3><p data-i18n="roadmapReportFinalBody">Final project report for the current playable build, covering the latest content, polishing work, and delivery state.</p><a href="./assets/docs/rapport-soutenance-final.pdf" target="_blank" rel="noopener" class="document-link"><span aria-hidden="true">&#128196;</span><span data-i18n="roadmapReportFinal">Final report</span></a></article>
+        </div>
+      </section>
+
+      <section id="team" class="panel panel--team">
+        <div class="badge"><span aria-hidden="true">&#127775;</span><span data-i18n="teamEyebrow">Team</span></div>
+        <h2 class="section-title" data-i18n="teamTitle">Dev Team</h2>
+        <p class="section-copy" data-i18n="teamBody">Rabbit Hole brings together a small EPITA team with complementary profiles across coordination, art direction, and development, all working on Fishotgun's strange little pond.</p>
+        <div class="team-grid">
+          <article class="member-card"><img src="./assets/team/team-lead.svg" alt="Avatar neutre du Team Lead" /><div class="member-card__content"><h3 data-i18n="teamMember1Name">Team Lead</h3><p class="member-card__role" data-i18n="teamMember1Role">Team lead, artist, developer</p><p data-i18n="teamMember1Bio">The Team Lead plays a central role in the team, balancing coordination, visual direction, and hands-on development work across Fishotgun.</p></div></article>
+          <article class="member-card"><img src="./assets/team/deputy-lead.svg" alt="Avatar neutre du Deputy Lead" /><div class="member-card__content"><h3 data-i18n="teamMember2Name">Deputy Lead</h3><p class="member-card__role" data-i18n="teamMember2Role">Deputy lead, developer</p><p data-i18n="teamMember2Bio">The Deputy Lead supports project coordination while staying deeply involved in development, helping connect production needs with technical execution.</p></div></article>
+          <article class="member-card"><img src="./assets/team/noah-fauvel.png" alt="Portrait de Noah Fauvel" /><div class="member-card__content"><h3 data-i18n="teamMember3Name">Noah Fauvel</h3><p class="member-card__role" data-i18n="teamMember3Role">Developer</p><p data-i18n="teamMember3Bio">Noah works on gameplay physics, player movement, camera feel, and fish AI, bringing together his interest in physics and artificial intelligence.</p></div></article>
+          <article class="member-card"><img src="./assets/team/developer-a.svg" alt="Avatar neutre du Développeur A" /><div class="member-card__content"><h3 data-i18n="teamMember4Name">Developer A</h3><p class="member-card__role" data-i18n="teamMember4Role">Developer</p><p data-i18n="teamMember4Bio">Developer A focuses on fishing systems, interface design, and multiplayer, building on experience with Luau on Roblox Studio and Python projects.</p></div></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner"><p><span aria-hidden="true">&#127811;</span> &copy; <span id="year"></span> <span data-i18n="footerBy">Fishotgun by Rabbit Hole</span></p></div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

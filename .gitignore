@@ -1,0 +1,20 @@
+# Secrets et données personnelles
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Système et éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dépendances / builds éventuels
+node_modules/
+dist/
+__pycache__/
+
+# Instructions locales pour l'assistant (non publiées)
+CLAUDE.md
